@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: learnwise_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: learnwise
+      POSTGRES_PASSWORD: learnwise_secure_pass_2026
+      POSTGRES_DB: learnwise_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U learnwise -d learnwise_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: learnwise_backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://learnwise:learnwise_secure_pass_2026@db:5432/learnwise_db
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: gemini-3.8-flash
+      SECRET_KEY: ${SECRET_KEY:-learnwise_super_secret_jwt_key_2026_aiml}
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: learnwise_frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000/api
+
+volumes:
+  postgres_data:

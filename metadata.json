@@ -1,0 +1,6 @@
+{
+  "name": "LearnWise AI",
+  "description": "AI-Based Personalized Learning Content Generator with adaptive difficulty and mastery tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

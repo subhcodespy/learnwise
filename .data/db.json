@@ -1,0 +1,498 @@
+{
+  "users": [
+    {
+      "id": "usr_student_demo_1",
+      "displayName": "Subhranshu (Student)",
+      "email": "student@learnwise.ai",
+      "passwordHash": "8f67108cce9f181e43fac0eb473ba18bef55ff287feeb4ba7624675bc178153d",
+      "preferredLevel": "Intermediate",
+      "learningPreference": "Practical coding",
+      "createdAt": "2026-10-20T18:10:47.144Z",
+      "updatedAt": "2026-10-27T18:10:47.145Z"
+    },
+    {
+      "id": "usr_g_7cf8bf0f-0223-48fe-acc1-9889dfbf3af4",
+      "displayName": "Subhranshu (Google Student)",
+      "email": "student.google@learnwise.ai",
+      "passwordHash": "43a1eb00f7a0dc78a91a8c1e7b584fb2e4ab47d31276d52ac8b1be38a2b747fb",
+      "preferredLevel": "Intermediate",
+      "learningPreference": "Practical coding",
+      "createdAt": "2026-10-27T18:31:38.069Z",
+      "updatedAt": "2026-10-27T18:31:38.069Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "demo_session_token_123",
+      "userId": "usr_student_demo_1",
+      "createdAt": "2026-10-27T18:10:47.145Z"
+    },
+    {
+      "token": "sess_167327fbdcba289cda42d0a4b1cb299b1c1d71c3a0b6f15c",
+      "userId": "usr_g_7cf8bf0f-0223-48fe-acc1-9889dfbf3af4",
+      "createdAt": "2026-10-27T18:31:38.070Z"
+    },
+    {
+      "token": "sess_b8c289e607d184491ce5a2cccf1bdc3bec232a5cba1ee036",
+      "userId": "usr_student_demo_1",
+      "createdAt": "2026-10-27T18:59:56.483Z"
+    },
+    {
+      "token": "sess_5e4ce7dedc3bc38deec46bf1413eccfa8da3952a0dfd688a",
+      "userId": "usr_student_demo_1",
+      "createdAt": "2026-10-27T19:00:03.417Z"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lsn_python_loops_beginner",
+      "userId": "usr_student_demo_1",
+      "topic": "Python loops and iteration",
+      "subject": "Computer Science & AI",
+      "proficiencyLevel": "Beginner",
+      "contentType": "Step-by-step tutorial",
+      "learningPreference": "Simple explanations",
+      "promptVersion": "v1.2",
+      "isSaved": true,
+      "createdAt": "2026-10-23T18:10:47.145Z",
+      "generatedContent": {
+        "learningObjectives": [
+          "Understand what a loop is and why programmers use them to avoid repetitive code",
+          "Learn the syntax and anatomy of a Python `for` loop with the `range()` function",
+          "Learn the anatomy of a `while` loop and how to avoid infinite loops",
+          "Write basic accumulator loops to calculate running totals"
+        ],
+        "explanation": "In computer programming, iteration means executing a set of instructions repeatedly until a specific condition is met. Imagine counting 10 coins: instead of saying \"count coin 1, count coin 2, count coin 3...\" individually in 10 lines of code, you use a loop that repeats the action for each coin in the stack.\n\nPython provides two primary loop constructs:\n1. `for` loops: Used when you know the sequence or collection in advance (definite iteration).\n2. `while` loops: Used when you want to repeat an action as long as a logical condition remains `True` (indefinite iteration).",
+        "keyConcepts": [
+          {
+            "term": "Iteration",
+            "definition": "The repetition of a process in order to generate a sequence of outcomes."
+          },
+          {
+            "term": "for loop",
+            "definition": "A control flow statement for specifying iteration over a sequence of items."
+          },
+          {
+            "term": "while loop",
+            "definition": "A loop that continues executing as long as its Boolean condition evaluates to True."
+          },
+          {
+            "term": "range(start, stop, step)",
+            "definition": "A built-in Python generator that creates an immutable sequence of numbers."
+          },
+          {
+            "term": "Loop Variable",
+            "definition": "The variable that takes on the value of the current item on each iteration."
+          }
+        ],
+        "workedExamples": [
+          {
+            "title": "Example 1: Basic for loop with range()",
+            "code": "# Counting from 1 to 5 inclusive\nfor number in range(1, 6):\n    print(f\"Current count: {number}\")\n\n# Output:\n# Current count: 1\n# Current count: 2\n# Current count: 3\n# Current count: 4\n# Current count: 5",
+            "explanation": "The range(1, 6) starts at 1 and stops just before 6. On each pass, the variable number holds the next integer."
+          },
+          {
+            "title": "Example 2: Accumulating a running sum with a while loop",
+            "code": "total = 0\ncounter = 1\n\nwhile counter <= 5:\n    total += counter\n    counter += 1  # Crucial update step!\n\nprint(f\"Sum of 1 through 5 is: {total}\")  # Output: 15",
+            "explanation": "The counter variable increments on every pass. If we forgot counter += 1, the condition counter <= 5 would remain True forever (infinite loop)."
+          }
+        ],
+        "importantNotes": [
+          "Python uses 0-indexed ranges by default: range(5) produces 0, 1, 2, 3, 4.",
+          "Always ensure that your while loop condition is guaranteed to become False eventually.",
+          "Indentation in Python defines the loop body; unindented code marks the end of the loop."
+        ],
+        "commonMisconceptions": [
+          {
+            "misconception": "range(1, 10) includes the number 10.",
+            "clarification": "In Python, range stops strictly before the stop argument (up to stop - 1)."
+          },
+          {
+            "misconception": "while loops are faster than for loops in Python.",
+            "clarification": "for loops iterating over C-optimized sequences or ranges are generally faster and less error-prone in Python."
+          }
+        ],
+        "practiceExercises": [
+          {
+            "problem": "Write a for loop that prints the even numbers from 2 to 20 inclusive.",
+            "hint": "Use the step parameter in range(start, stop, step)."
+          },
+          {
+            "problem": "Write a loop that calculates the product of numbers from 1 to 5 (factorial of 5).",
+            "hint": "Initialize product = 1 and multiply each number."
+          }
+        ],
+        "knowledgeCheck": [
+          {
+            "question": "What values does range(2, 8, 2) generate?",
+            "answer": "2, 4, 6"
+          },
+          {
+            "question": "What happens if a while loop condition never becomes False?",
+            "answer": "It results in an infinite loop that freezes or crashes the program."
+          }
+        ],
+        "suggestedNextStep": "Proceed to Intermediate loops to learn accumulator patterns, list comprehensions, and loop control statements (break, continue, else)."
+      }
+    },
+    {
+      "id": "lsn_python_loops_intermediate",
+      "userId": "usr_student_demo_1",
+      "topic": "Python loops and iteration",
+      "subject": "Computer Science & AI",
+      "proficiencyLevel": "Intermediate",
+      "contentType": "Practical examples",
+      "learningPreference": "Practical coding",
+      "promptVersion": "v1.2",
+      "isSaved": true,
+      "createdAt": "2026-10-25T18:10:47.145Z",
+      "generatedContent": {
+        "learningObjectives": [
+          "Master Pythonic iteration tools: enumerate(), zip(), and reversed()",
+          "Use loop control statements (break, continue) and understand loop-else syntax",
+          "Implement accumulator patterns and dictionary grouping during iteration",
+          "Transform nested loops into concise, memory-aware list and dict comprehensions"
+        ],
+        "explanation": "At the intermediate level, loop iteration shifts from basic counting to processing structured data pipelines efficiently. Python emphasizes idiomatic iteration: rather than indexing arrays manually with indices like `for i in range(len(items)):`, Pythonic code iterates directly over elements, pairs collections with `zip()`, or unpacks indexes alongside items using `enumerate()`.\n\nFurthermore, Python features a unique `else` clause on loops, which runs only if the loop completes normally without encountering a `break` statement. This is invaluable in search algorithms.",
+        "keyConcepts": [
+          {
+            "term": "enumerate(iterable, start=0)",
+            "definition": "Yields tuples containing an incrementing count and the values obtained from iterating over iterable."
+          },
+          {
+            "term": "zip(*iterables)",
+            "definition": "Aggregates elements from each of the iterables in parallel until the shortest input is exhausted."
+          },
+          {
+            "term": "Loop-Else construct",
+            "definition": "An else block attached to a for or while loop that executes only when the loop completes without a break."
+          },
+          {
+            "term": "List Comprehension",
+            "definition": "A concise syntax [expr for item in iterable if condition] that builds a new list."
+          }
+        ],
+        "workedExamples": [
+          {
+            "title": "Example 1: Safe Search with loop-else construct",
+            "code": "target = \"user_42\"\nuser_ids = [\"user_10\", \"user_25\", \"user_42\", \"user_99\"]\n\nfor index, uid in enumerate(user_ids):\n    if uid == target:\n        print(f\"Target found at index {index}\")\n        break\nelse:\n    # Executes ONLY if no break was triggered!\n    print(\"User ID not found in database batch.\")",
+            "explanation": "The else block eliminates the need for an external \"found = False\" flag variable, keeping search loops clean and readable."
+          },
+          {
+            "title": "Example 2: Parallel Iteration and Data Cleansing with zip() and comprehension",
+            "code": "features = [\"learning_rate\", \"batch_size\", \"epochs\"]\nvalues = [0.001, 32, 100]\n\n# Constructing model hyperparameter configuration\nconfig = {feat: val for feat, val in zip(features, values)}\nprint(config)\n# {'learning_rate': 0.001, 'batch_size': 32, 'epochs': 100}",
+            "explanation": "zip() pairs corresponding elements in lockstep, and dictionary comprehension binds them into an O(1) lookup map."
+          }
+        ],
+        "importantNotes": [
+          "Avoid modifying a list while iterating over it (e.g. removing items inside for item in my_list:); iterate over a slice copy my_list[:] or use a list comprehension instead.",
+          "zip() stops at the shortest iterator. Use itertools.zip_longest() if padding is needed."
+        ],
+        "commonMisconceptions": [
+          {
+            "misconception": "The else block in for-else runs when the loop condition is False, like an if-else.",
+            "clarification": "In Python loops, else runs if the loop was NOT terminated by break. If the loop is terminated by break, else is skipped."
+          }
+        ],
+        "practiceExercises": [
+          {
+            "problem": "Given a list of student scores, create a dictionary mapping student index to \"Pass\" if score >= 70 else \"Review\".",
+            "hint": "Combine enumerate() with dictionary comprehension."
+          }
+        ],
+        "knowledgeCheck": [
+          {
+            "question": "When does the else block attached to a for loop execute?",
+            "answer": "When the loop finishes iterating all elements without encountering a break statement."
+          }
+        ],
+        "suggestedNextStep": "Advance to nested loops, multi-dimensional tensor iteration, and big-O algorithmic time complexity."
+      }
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "qz_python_loops_intermediate_1",
+      "userId": "usr_student_demo_1",
+      "lessonId": "lsn_python_loops_intermediate",
+      "topic": "Python loops and iteration",
+      "proficiencyLevel": "Intermediate",
+      "createdAt": "2026-10-25T18:10:47.145Z",
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What is the primary advantage of using `enumerate(collection)` over `range(len(collection))` in Python?",
+          "options": [
+            "It allocates an array of integers upfront in memory",
+            "It provides cleaner tuple unpacking of index and value without manual indexing",
+            "It automatically sorts the collection before iterating",
+            "It forces the loop to run on multiple CPU cores"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "enumerate() produces index-value tuples lazily, adhering to Pythonic readability and avoiding error-prone collection[i] lookups.",
+          "conceptTested": "enumerate and iterator unpacking",
+          "difficulty": "Intermediate"
+        },
+        {
+          "id": "q2",
+          "question": "Consider the code below. What is printed?\n\nfor x in [1, 2, 3]:\n    if x == 4:\n        break\nelse:\n    print(\"Done\")",
+          "options": [
+            "Nothing is printed",
+            "Done",
+            "An IndexError is raised",
+            "1 2 3 Done"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Since x == 4 is never True, break is never executed. The loop finishes all iterations normally, so the loop-else block executes and prints \"Done\".",
+          "conceptTested": "loop-else control flow",
+          "difficulty": "Intermediate"
+        },
+        {
+          "id": "q3",
+          "question": "What occurs when using `zip([1, 2, 3], [\"a\", \"b\"])` in standard Python 3?",
+          "options": [
+            "An error is raised because the lengths do not match",
+            "It yields (1, \"a\") and (2, \"b\"), truncating at the length of the shortest iterable",
+            "It pads the second list with None",
+            "It repeats \"a\" for the third element"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Built-in zip() stops immediately once the shortest input iterable is exhausted.",
+          "conceptTested": "zip parallel iteration",
+          "difficulty": "Intermediate"
+        },
+        {
+          "id": "q4",
+          "question": "Why is modifying a list (e.g. `items.remove(x)`) while directly iterating over `for x in items:` dangerous?",
+          "options": [
+            "Python will throw a SyntaxError immediately",
+            "The internal iterator index shifts, causing subsequent elements to be skipped silently",
+            "The list becomes immutable automatically",
+            "Memory leaks occur in the garbage collector"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Mutating the length of a list during iteration modifies the underlying contiguous buffer offsets, causing the loop index to skip items.",
+          "conceptTested": "mutation during iteration",
+          "difficulty": "Intermediate"
+        },
+        {
+          "id": "q5",
+          "question": "Which comprehension correctly creates a list of squared numbers only for even numbers between 0 and 9?",
+          "options": [
+            "[x**2 for x in range(10) if x % 2 == 0]",
+            "[x**2 if x % 2 == 0 for x in range(10)]",
+            "[for x in range(10) return x**2 if x % 2 == 0]",
+            "{x: x**2 for x in range(10) if x % 2 == 0}"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "List comprehension filtering syntax is [expression for item in iterable if condition].",
+          "conceptTested": "filtered list comprehension",
+          "difficulty": "Intermediate"
+        }
+      ]
+    }
+  ],
+  "attempts": [
+    {
+      "id": "att_demo_scenario_2_1793127603436",
+      "userId": "usr_student_demo_1",
+      "quizId": "qz_scenario_2_1793127603436",
+      "topic": "Python loops and iteration",
+      "proficiencyLevel": "Beginner",
+      "score": 80,
+      "totalQuestions": 5,
+      "correctAnswers": 4,
+      "submittedAt": "2026-10-27T19:00:03.437Z",
+      "answers": []
+    },
+    {
+      "id": "att_demo_scenario_1_1793127603436",
+      "userId": "usr_student_demo_1",
+      "quizId": "qz_scenario_1_1793127603436",
+      "topic": "Python loops and iteration",
+      "proficiencyLevel": "Intermediate",
+      "score": 20,
+      "totalQuestions": 5,
+      "correctAnswers": 1,
+      "submittedAt": "2026-10-27T17:00:03.436Z",
+      "answers": []
+    },
+    {
+      "id": "att_demo_scenario_2",
+      "userId": "usr_student_demo_1",
+      "quizId": "qz_scenario_2",
+      "topic": "Python loops and iteration",
+      "proficiencyLevel": "Beginner",
+      "score": 80,
+      "totalQuestions": 5,
+      "correctAnswers": 4,
+      "submittedAt": "2026-10-27T18:10:52.844Z",
+      "answers": []
+    },
+    {
+      "id": "att_demo_scenario_1",
+      "userId": "usr_student_demo_1",
+      "quizId": "qz_scenario_1",
+      "topic": "Python loops and iteration",
+      "proficiencyLevel": "Intermediate",
+      "score": 20,
+      "totalQuestions": 5,
+      "correctAnswers": 1,
+      "submittedAt": "2026-10-27T16:10:52.844Z",
+      "answers": []
+    },
+    {
+      "id": "att_demo_initial",
+      "userId": "usr_student_demo_1",
+      "quizId": "qz_python_loops_intermediate_1",
+      "topic": "Python loops and iteration",
+      "proficiencyLevel": "Intermediate",
+      "score": 80,
+      "totalQuestions": 5,
+      "correctAnswers": 4,
+      "submittedAt": "2026-10-26T18:10:47.145Z",
+      "answers": [
+        {
+          "questionId": "q1",
+          "question": "What is the primary advantage of using enumerate(collection)?",
+          "options": [
+            "Allocates integers",
+            "Cleaner tuple unpacking",
+            "Sorts collection",
+            "Multi-core"
+          ],
+          "selectedAnswerIndex": 1,
+          "correctAnswerIndex": 1,
+          "isCorrect": true,
+          "explanation": "Correct unpacking syntax.",
+          "conceptTested": "enumerate and iterator unpacking"
+        },
+        {
+          "questionId": "q2",
+          "question": "Loop-else behavior",
+          "options": [
+            "Nothing",
+            "Done",
+            "IndexError",
+            "1 2 3 Done"
+          ],
+          "selectedAnswerIndex": 1,
+          "correctAnswerIndex": 1,
+          "isCorrect": true,
+          "explanation": "Executes when no break occurs.",
+          "conceptTested": "loop-else control flow"
+        },
+        {
+          "questionId": "q3",
+          "question": "zip uneven length behavior",
+          "options": [
+            "Error",
+            "Truncates to shortest",
+            "Pads with None",
+            "Repeats"
+          ],
+          "selectedAnswerIndex": 1,
+          "correctAnswerIndex": 1,
+          "isCorrect": true,
+          "explanation": "Truncates at shortest iterable.",
+          "conceptTested": "zip parallel iteration"
+        },
+        {
+          "questionId": "q4",
+          "question": "Mutation during iteration",
+          "options": [
+            "SyntaxError",
+            "Index shifts causing skipped items",
+            "Immutable",
+            "Memory leak"
+          ],
+          "selectedAnswerIndex": 0,
+          "correctAnswerIndex": 1,
+          "isCorrect": false,
+          "explanation": "Does not throw SyntaxError; causes silent index-shift bugs.",
+          "conceptTested": "mutation during iteration"
+        },
+        {
+          "questionId": "q5",
+          "question": "Filtered list comprehension syntax",
+          "options": [
+            "[x**2 for x in range(10) if x % 2 == 0]",
+            "Wrong syntax",
+            "Wrong syntax",
+            "Dict syntax"
+          ],
+          "selectedAnswerIndex": 0,
+          "correctAnswerIndex": 0,
+          "isCorrect": true,
+          "explanation": "Proper list comprehension filtering clause.",
+          "conceptTested": "filtered list comprehension"
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "rec_demo_scenario_2_1793127603436",
+      "userId": "usr_student_demo_1",
+      "topic": "Python loops and iteration",
+      "previousLevel": "Beginner",
+      "recommendedLevel": "Intermediate",
+      "latestScore": 80,
+      "recommendationReason": "Score of 80% achieved target proficiency (70-84% range). Advancing to Intermediate level for deeper conceptual and practical challenges.",
+      "weakConcepts": [],
+      "createdAt": "2026-10-27T19:00:03.437Z"
+    },
+    {
+      "id": "rec_demo_scenario_1_1793127603436",
+      "userId": "usr_student_demo_1",
+      "topic": "Python loops and iteration",
+      "previousLevel": "Intermediate",
+      "recommendedLevel": "Beginner",
+      "latestScore": 20,
+      "recommendationReason": "Score of 20% falls below the 40% mastery threshold. System adjusted difficulty down to Beginner to solidify core fundamentals. Reinforcing detected weak concepts: while loop condition update, infinite loop risk.",
+      "weakConcepts": [
+        "while loop condition update",
+        "infinite loop risk"
+      ],
+      "createdAt": "2026-10-27T17:00:03.437Z"
+    },
+    {
+      "id": "rec_demo_scenario_2",
+      "userId": "usr_student_demo_1",
+      "topic": "Python loops and iteration",
+      "previousLevel": "Beginner",
+      "recommendedLevel": "Intermediate",
+      "latestScore": 80,
+      "recommendationReason": "Score of 80% achieved target proficiency (70-84% range). Advancing to Intermediate level for deeper conceptual and practical challenges.",
+      "weakConcepts": [],
+      "createdAt": "2026-10-27T18:10:52.845Z"
+    },
+    {
+      "id": "rec_demo_scenario_1",
+      "userId": "usr_student_demo_1",
+      "topic": "Python loops and iteration",
+      "previousLevel": "Intermediate",
+      "recommendedLevel": "Beginner",
+      "latestScore": 20,
+      "recommendationReason": "Score of 20% falls below the 40% mastery threshold. System adjusted difficulty down to Beginner to solidify core fundamentals. Reinforcing detected weak concepts: while loop condition update, infinite loop risk.",
+      "weakConcepts": [
+        "while loop condition update",
+        "infinite loop risk"
+      ],
+      "createdAt": "2026-10-27T16:10:52.844Z"
+    },
+    {
+      "id": "rec_demo_1",
+      "userId": "usr_student_demo_1",
+      "topic": "Python loops and iteration",
+      "previousLevel": "Intermediate",
+      "recommendedLevel": "Advanced",
+      "latestScore": 80,
+      "recommendationReason": "Score of 80% indicates solid comprehension of iteration mechanisms. Advancing to Advanced for nested loops and algorithmic complexity.",
+      "weakConcepts": [
+        "mutation during iteration"
+      ],
+      "createdAt": "2026-10-26T18:10:47.145Z"
+    }
+  ]
+}
